@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Sidebar from './components/Sidebar';
+import AddMember  from './pages/Addmember';
+import MemberList from './pages/Memberlist';
+import BlogPanel from './pages/Blogpanel';
+import ReceivedMessages from './pages/Receivedmessages';
+import Logout from './pages/Logout';
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <BrowserRouter>
+    <Sidebar>
+    <Routes>
+      <Route path='/addmember' element={<AddMember/>}   />
+      <Route path='/memberlist' element={<MemberList />}   />
+      <Route path='/receivedmessages' element={<ReceivedMessages/>}   />
+      <Route path='/blogpanel' element={<BlogPanel />}   />
+      <Route path='/logout' element={<Logout />} />
+    </Routes>
+    </Sidebar>
+    </BrowserRouter>
+    </>
   );
 }
 

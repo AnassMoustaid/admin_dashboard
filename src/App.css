@@ -1,38 +1,292 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.dashboard{
+  display: flex;
+  background: #ff4F52;
+  position: relative;
+}
+
+.header{
+  align-items: center;
+  padding: 20px 15px;
+}
+
+.header h1{
+  color: #ff4F52;
+}
+
+.sidebar{
+  background: black;
+  color: rgb(172, 161, 161);
+  height: 100vh;
+  width: 15%;
+}
+
+.sidebar_link {
+  text-decoration: none;
+  width:15%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+  align-items: center;
+    font-size: 1rem;
+	color:#ffffff;
+  padding: 10px 15px;
+}
+
+.sidebar_link:hover{
+  color: grey;
+  transition: all 0.5s;
+}
+
+
+.sidebar_link{
+  width:160px;
+	height: 50px;
+  padding: 10px 15px;
+  transition: all 0.5s;
+}
+
+.active_link{
+  width:160px;
+	height: 50px;
+  padding: 10px 15px;
+  color:#ff4F52;
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+    align-items: center;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+main{
+  width: 100%;
+  padding: 20px 15px;
+}
+
+.addmember_header h1{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.addmember_container{
+  position: relative;
+  height: auto;
+  padding: 20px;
+  margin: 10% auto;
+  border-radius: 3px;
+  width: 60%;
+  background-color: whitesmoke
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.addmember_container h1, .member_list h1, .received_messages h1{
+  text-align: center;
+  padding-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+
+.member_list input{
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-width: 40%;
+  overflow: hidden;
+  margin: auto;
+  display: block;
+  margin-top: 20px;
+}
+
+
+input, textarea {
+  width:50%;
+  height:30px;
+  margin:5px 0px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: rgb(199, 194, 194);
+  color: black;
+  border-radius: 5px;
+}
+
+#membership_type {
+  width:53%;
+  height:40px;
+  margin:5px 0px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: rgb(199, 194, 194);
+  color: black;
+  border-radius: 5px;
+}
+
+.addmember_button {
+  width:25%;
+height: 50px;
+text-decoration: none;
+display: flex;
+justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  background-color: #f14b4b;
+  box-shadow: 5px 10px 30px rgba(255, 2, 2, 0.336);
+  border-radius: 5px;
+color:#ffffff;
+  overflow: auto;
+}
+
+.addmember_button:hover{
+  background-color: #FF1414;
+}
+
+
+.member_table, .messages_table, .blog_table{
+  border-collapse: collapse;
+  background-color: white;
+  margin: 50px auto;
+  font-size: 0.9em;
+  min-width: 80%;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15) ;
+}
+
+.member_table thead tr, .messages_table thead tr, .blog_table thead tr{
+  background-color: black;
   color: white;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.member_table th,
+.member_table td,
+.messages_table th, 
+.blog_table th{
+  padding: 12px 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.messages_table td{
+  max-width:100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 12px 15px;
+}
+
+.blog_table td{
+  max-width:300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 12px 15px;
+}
+
+.member_table tbody tr,
+.messages_table tbody tr,
+.blog_table tbody tr{
+  border-bottom: 1px solid #dddddd;
+}
+
+.member_table tbody tr:nth-of-type(even)
+.messages_table tbody tr:nth-of-type(even)
+.blog_table tbody tr:nth-of-type(even){
+  background-color: #f3f3f3;
+}
+
+.member_table tbody tr:last-of-type
+.messages_table tbody tr:last-of-type
+.blog_table table tbody tr:last-of-type{
+  border-bottom: 2px solid black;
+}
+
+.blog_div{
+  display: flex;
+  padding: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  justify-content: space-between;
+}
+
+.add_article {
+  width:15%;
+  height: 50px;
+  text-decoration: none;
+  float: right;
+  display: flex;
+  justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    background-color: #644bf1;
+    box-shadow: 5px 10px 30px rgba(6, 2, 255, 0.336);
+    border-radius: 5px;
+  color:#ffffff;
+}
+
+.add_article:hover {
+  background-color: blue;
+  cursor: pointer;
+}
+
+
+.popup_modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.popup_modal_content{
+  position: relative;
+  padding: 25px;
+  width: 100%;
+  max-width: 700px;
+  background-color: #FFF;
+  height: 90%;
+  max-height: 100%;
+  overflow-y: auto;
+  
+}
+
+.close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.popup_modal_content p {
+  padding: 5px;
+}
+
+.modal_button, .modal_buttons{
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  padding: 4px;
+}
+
+.modal_buttons button{
+  padding: 4px;
+}
+
+
+#maintitle_edit, #secondarytitle_edit {
+  resize: none;
+  height: 40px;
+  width: 80%;
+}
+
+#content_edit {
+  resize: none;
+  height: 250px;
+  width: 80% ;
 }
